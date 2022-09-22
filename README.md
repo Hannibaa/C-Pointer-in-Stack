@@ -1,6 +1,7 @@
 // C-Primitive-Concepts
 // How to accesse from only one pointer to whole stack variable 
 // Just
+// Next will see how to use pointer to read inside function, struct(structure data type) and class;
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -30,7 +31,7 @@ int main()
 	printf("Address(b) = [%X], Address(a+8) = [%X]\n",&b, &a+8);
 
 	//we can read the value of b by address operation  of a;
-     a = 3; b = 12;
+         a = 3; b = 12;
 	 printf(" a = [%d]\n b= [%d]\n", a, *(&a + 8));
 	
 	//*(&a + 8) = 11; //check this expression ?
@@ -56,20 +57,20 @@ int main()
 	printf("Address(ch)[%X] - Address(c)[%X] = [%d]\n",&ch,&c, (int)(&ch) - (int)(&c));
 
 	// use pointer of a to modify char
-    *(pa + 24) = (int)('h');
+        *(pa + 24) = (int)('h');
 	printf("Modift value of ch by ; *(pa + 24) = (int)('h')\n");
 	printf("Value of ch is [%c]\n", ch);
 	
 
 	//we calculate the offset between ch and s;
 	printf("Address(s)[%X] - Address(ch)[%X] = [%d]\n",&s,&ch, (int)(s) - (int)(&ch));
-  printf("Offset &s[0][%X] and &s[1][%X] is [%d]\n",&s[0],&s[1], (int)(&s[1]) - (int)(&s[0]));
+        printf("Offset &s[0][%X] and &s[1][%X] is [%d]\n",&s[0],&s[1], (int)(&s[1]) - (int)(&s[0]));
 
 	printf("String (s) is [%s]\n", s);
 	printf("Address(s)[%X] Address(pa+32)[%X]\n", &s, pa + 32);
 
 	// use pointer pa to write in string s
-  (char)*(pa + 32) = 'A';
+        (char)*(pa + 32) = 'A';
 	(char)*(pa + 34) = 'B';
 	printf("String (s) is [%s]\n", s);
 
@@ -90,7 +91,7 @@ int main()
 	printf("Value of a = [%d]\n", a);
 	a = (int)&a;
 	printf("Value of a = [%X]\n", a);
-    printf("Value of [ a ] = [%X][%X][%X][%X]\n",(unsigned) * ((char*)pa),
+        printf("Value of [ a ] = [%X][%X][%X][%X]\n",(unsigned) * ((char*)pa),
 		                                          (unsigned) * ((char*)pa + 1),
 		                                           (unsigned) * ((char*)pa + 2), 
 		                                            (unsigned) * ((char*)pa + 3));
@@ -100,7 +101,7 @@ int main()
 	s[4] = '\0';
 	printf("Value of integer a is string s = [%s]\n", s);
 
-	system("pause");
+	getchar();
   return 0;
   
   }
